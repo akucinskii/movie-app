@@ -5,7 +5,7 @@ export interface IAllMoviesProps {}
 const AllMovies: React.FunctionComponent<IAllMoviesProps> = (props) => {
   return (
     <div>
-      <p>AllMovies page</p>
+      <p>All Movies page</p>
     </div>
   );
 };

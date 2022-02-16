@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export interface IItemProps {}
 
@@ -11,6 +11,7 @@ interface Items {
 }
 
 const Item: React.FunctionComponent<IItemProps> = (props) => {
+  const navigate = useNavigate();
   const [data, setData] = useState<Items>({});
   const { number } = useParams();
 
@@ -22,6 +23,7 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
     console.log(items);
     if (items.Response === "False") {
       alert("No movie found");
+      navigate("/");
     } else {
       setData(items);
     }
