@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 export interface IItemProps {}
 
-interface Item {
+interface Items {
   Title?: string;
   Actors?: string;
   Poster?: string;
@@ -11,10 +11,10 @@ interface Item {
 }
 
 const Item: React.FunctionComponent<IItemProps> = (props) => {
-  const [data, setData] = useState<Item>({});
+  const [data, setData] = useState<Items>({});
   const { number } = useParams();
 
-  const fetchItems = async (req: any) => {
+  const fetchItems = async (req: string) => {
     const data: any = await fetch(
       `http://www.omdbapi.com/?apikey=3458304a&t=${req}`
     );

@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap");
+
+.logo__button {
+  background: none;
+  color: white;
+  font-family: "Playfair Display SC", serif;
+  border: none;
+  font-size: 21px;
+}
+.logo__button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
