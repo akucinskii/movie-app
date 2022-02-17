@@ -11,7 +11,7 @@ const NavBarLogo = () => {
         navigate("/");
       }}
     >
-      Webflix
+      Widelo
     </button>
   );
 };

@@ -1,12 +1,11 @@
 import React from "react";
-import { movies } from "../../data/data";
 import Card from "../molecules/Card";
 
-const Cards = () => {
+const Cards = ({ movies }: any) => {
   return (
-    <div className="mt-20 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 relative 2xl:grid-cols-7 gap-4">
-      {movies.map((data) => (
-        <Card data={data} />
+    <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 relative gap-4">
+      {movies.map((data: any, index: number) => (
+        <Card data={data} key={index} />
       ))}
     </div>
   );
