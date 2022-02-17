@@ -8,7 +8,7 @@ const Layout: React.FunctionComponent<ILayoutProps> = (props) => {
   return (
     <div className="bg-[#232323] w-full h-full min-h-screen">
       <Navbar />
-      <div className="w-full pt-16 mx-auto bg-[#2b2b2b] min-h-screen">
+      <div className="w-full mx-auto bg-[#0f0f0f] min-h-screen">
         <Outlet />
       </div>
     </div>

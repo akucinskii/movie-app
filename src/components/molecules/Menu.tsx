@@ -18,7 +18,7 @@ const Menu = () => {
       <div
         className={`absolute ${
           menuVisible ? "" : "hidden"
-        } flex flex-col top-0 m-12 left-0 right-0 mx-auto border-b border-[#2b2b2b] bg-[#232323] bg-opacity-75 w-full gap-4 p-2 px-8 transition-all`}
+        } flex flex-col top-0 m-12 left-0 right-0 mx-auto border-b border-[#2b2b2b] bg-[#232323] bg-opacity-75 w-full gap-4 p-2 px-8 transition-all z-50`}
       >
         <button
           className="md:hidden transition-all 0.3s hover:scale-105 lg:text-xl text- hover:text-white"

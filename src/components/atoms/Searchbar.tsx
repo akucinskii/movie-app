@@ -5,10 +5,10 @@ const Searchbar = () => {
   const [search, setSearch] = useState<string>("");
   const navigate = useNavigate();
   return (
-    <div className="w-1/2 items-center pr-4 flex-row-reverse h-16 hidden md:flex">
-      <div className="md:text-lg lg:text-xl">
+    <div className="w-1/2 items-center pr-4 flex-row-reverse h-16 hidden md:flex relative">
+      <div className="md:text-lg lg:text-xl bg-transparent group-hover:bg-[#232323]">
         <input
-          className="opacity-100 bg-[#232323] active:border-none "
+          className="opacity-100 bg-transparent active:border-none "
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
