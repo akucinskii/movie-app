@@ -23,7 +23,7 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
 
   const fetchItems = async (req: string) => {
     const data: any = await fetch(
-      `http://www.omdbapi.com/?apikey=3458304a&t=${req}`
+      `https://www.omdbapi.com/?apikey=3458304a&t=${req}`
     );
     const items: any = await data.json();
     console.log(items);
