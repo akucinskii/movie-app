@@ -4,7 +4,6 @@
 
 Features:
 
-- [Figma](https://www.figma.com/file/71SCoIwbH7vLFdzhm8vsyb/Movies-app?node-id=0%3A1) design (website got changes while making so not 100% accurate)
 - Own page for each searched/clicked movie.
 - Search function.
 
