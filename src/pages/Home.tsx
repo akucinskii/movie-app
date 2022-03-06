@@ -21,7 +21,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
           </Link>
         </div>
         <div className="w-full top-0 h-full bg-black absolute opacity-50"></div>
-        <div className="w-full bottom-0 h-10 absolute bg-gradient-to-t from-[#2b2b2b] to-transparent"></div>
+        <div className="w-full bottom-0 h-10 absolute bg-gradient-to-t from-black to-transparent"></div>
       </div>
       <div className="flex flex-col content-space-between ">
         <h1 className="w-full text-center text-4xl text-white p-3 italic">
