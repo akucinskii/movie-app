@@ -15,7 +15,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
 
   console.log(movies);
   return (
-    <div className="">
+    <div className="h-full">
       <div className="w-full h-[32rem] bg-black relative group overflow-clip">
         <img
           className="w-full h-full object-cover lg:object-top group-hover:scale-105 z-0 transition-transform duration-1000"
