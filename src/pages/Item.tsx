@@ -43,7 +43,10 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
   }, [res]);
   return (
     <div className="flex w-full h-full justify-center">
-      {data.Title ? (
+      {data.Title ? <h1 className="text-white absolute text-4xl top-[30%] m-auto">
+          Movie not found.
+        </h1> 
+      ) : (
         <div className="flex flex-col md:flex-row max-w-screen md:max-w-[700px] my-16 md:my-24 m-2 p-1 bg-[#232323] rounded-lg text-white">
           <div className="md:w-1/2">
             <img
@@ -69,11 +72,8 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
               <p className="">Released: {data.Released}</p>
             </div>
           </div>
-        </div>
-      ) : (
-        <h1 className="text-white absolute text-4xl top-[30%] m-auto">
-          Movie not found.
-        </h1>
+        </div>(
+       
       )}
     </div>
   );
