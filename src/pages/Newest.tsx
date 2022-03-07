@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Cards from "../components/organisms/Cards";
-import { movies } from "../data/newMovies";
 export interface INewestProps {}
 
 const Newest: React.FunctionComponent<INewestProps> = (props) => {
+  const [movies, setMovies] = useState();
+  useEffect(() => {
+    fetch("https://flaskwidelo.herokuapp.com/new").then((response) =>
+      response.json().then((data) => {
+        setMovies(data);
+      })
+    );
+  }, []);
   return (
     <div className="flex justify-center h-full">
       <div className="mt-20">

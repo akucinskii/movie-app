@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Cards from "../components/organisms/Cards";
-import { movies } from "../data/HomePageData";
 export interface IHomeProps {}
 
 const Home: React.FunctionComponent<IHomeProps> = (props) => {
+  const [movies, setMovies] = useState();
+  useEffect(() => {
+    fetch("https://flaskwidelo.herokuapp.com/homepage").then((response) =>
+      response.json().then((data) => {
+        setMovies(data);
+      })
+    );
+  }, []);
+
+  console.log(movies);
   return (
     <div className="">
       <div className="w-full h-[32rem] bg-black relative group overflow-clip">
