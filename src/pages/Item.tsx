@@ -22,12 +22,10 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
   const { number } = useParams();
 
   const fetchItems = async (req: string) => {
-    console.log("fetch")
     const data: any = await fetch(
       `https://www.omdbapi.com/?apikey=3458304a&t=${req}`
     );
     const items: any = await data.json();
-    console.log(items, data);
     if (items.Response === "False") {
       alert("No movie found");
       navigate("/");

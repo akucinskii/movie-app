@@ -16,7 +16,6 @@ const Searchbar = () => {
         <button
           type="submit"
           onClick={() => {
-            console.log(search);
             navigate(`/item/${search}`);
           }}
         >
