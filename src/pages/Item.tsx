@@ -26,7 +26,7 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
       `https://www.omdbapi.com/?apikey=3458304a&t=${req}`
     );
     const items: any = await data.json();
-    console.log(items);
+    console.log(items, data);
     if (items.Response === "False") {
       alert("No movie found");
       navigate("/");
