@@ -42,6 +42,11 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
   }, [number]);
   return (
     <div className="flex w-full h-full justify-center">
+      {data.Title == null ? (
+        <div className="flex w-full h-screen justify-center items-center text-gray-300 ">
+          <h1 className="text-xl md:text-3xl lg:text-5xl">No movie found...</h1>
+        </div>
+      ) : (
         <div className="flex flex-col md:flex-row max-w-screen md:max-w-[700px] my-16 md:my-24 m-2 p-1 bg-[#232323] rounded-lg text-white">
           <div className="md:w-1/2">
             <img
@@ -68,6 +73,7 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
             </div>
           </div>
         </div>
+      )}
     </div>
   );
 };
