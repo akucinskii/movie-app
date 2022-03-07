@@ -19,9 +19,11 @@ interface Items {
 const Item: React.FunctionComponent<IItemProps> = (props) => {
   const navigate = useNavigate();
   const [data, setData] = useState<Items>({});
+  const [loading, setLoading] = useState(false);
   const { number } = useParams();
 
   const fetchItems = async (req: string) => {
+    setLoading(true);
     const data: any = await fetch(
       `https://www.omdbapi.com/?apikey=3458304a&t=${req}`
     );
@@ -32,6 +34,7 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
     } else {
       setData(items);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -44,7 +47,13 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
     <div className="flex w-full h-full justify-center">
       {data.Title == null ? (
         <div className="flex w-full h-screen justify-center items-center text-gray-300 ">
-          <h1 className="text-xl md:text-3xl lg:text-5xl">No movie found...</h1>
+          {loading ? (
+            <h1 className="text-xl md:text-3xl lg:text-5xl">Loading..</h1>
+          ) : (
+            <h1 className="text-xl md:text-3xl lg:text-5xl">
+              No movie found...
+            </h1>
+          )}
         </div>
       ) : (
         <div className="flex flex-col md:flex-row max-w-screen md:max-w-[700px] my-16 md:my-24 m-2 p-1 bg-[#232323] rounded-lg text-white">
