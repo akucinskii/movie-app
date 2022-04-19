@@ -1,8 +1,8 @@
 # React app showing movies.
 
-## It might take a while for heroku server to start up!!!
+## It might take a while for heroku server to start up.
 
-- App showing movies from OMDb API and own Flask Api. Made to practice React and learn React-Router, uses base css as styling.
+- App that shows movies from OMDb API and my own Flask Api. Made to practice React and learn React-Router, uses base css as styling.
 
 Features:
 
