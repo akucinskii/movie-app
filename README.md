@@ -1,14 +1,13 @@
 # React app showing movies.
 
-## It might take a while for heroku server to start up.
+## It might take a while for Heroku server to start up.
 
-- App that shows movies from OMDb API and my own Flask Api. Made to practice React and learn React-Router, uses base css as styling.
+- The app shows movies from OMDb API and my Flask Api. Made to practice React and learn React-Router, uses base css as styling.
 
 Features:
-
 - Own page for each searched/clicked movie.
 - Search for movie function.
-- Movies displayed in homepage/all/popular/new come from flask api hosted on heroku.
+- Movies displayed on homepage/all/popular/new come from flask API hosted on Heroku.
 
 
 
