@@ -36,7 +36,6 @@ const Item = () => {
         navigate("/");
       } else {
         setData(items);
-        console.log(items);
       }
       setLoading(false);
     };
@@ -83,13 +82,15 @@ const Item = () => {
                     );
                   })}
               </div>
-              <p className="text-md">
-                {data.Genre} {data.Runtime}
-              </p>
+
               <span>Description: {data.Plot}</span>
               <span></span>
             </div>
+
             <div className="text-gray-400">
+              <p className="">
+                {data.Genre} {data.Runtime}
+              </p>
               <p className="">Country: {data.Country}</p>
               <p className="">Released: {data.Released}</p>
             </div>
