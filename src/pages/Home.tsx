@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Cards from "../components/organisms/Cards";
-export interface IHomeProps {}
 
-const Home: React.FunctionComponent<IHomeProps> = (props) => {
+const Home = () => {
   const [movies, setMovies] = useState();
   useEffect(() => {
     fetch("https://flaskwidelo.herokuapp.com/homepage").then((response) =>
@@ -12,8 +11,6 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
       })
     );
   }, []);
-
-  console.log(movies);
   return (
     <div className="h-full">
       <div className="w-full h-[32rem] bg-black relative group overflow-clip">

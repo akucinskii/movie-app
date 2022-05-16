@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cards from "../components/organisms/Cards";
-export interface INewestProps {}
 
-const Newest: React.FunctionComponent<INewestProps> = (props) => {
+const Newest = () => {
   const [movies, setMovies] = useState();
   useEffect(() => {
     fetch("https://flaskwidelo.herokuapp.com/new").then((response) =>

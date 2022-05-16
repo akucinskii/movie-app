@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cards from "../components/organisms/Cards";
 
-export interface IPopularProps {}
-
-const Popular: React.FunctionComponent<IPopularProps> = (props) => {
+const Popular = () => {
   const [movies, setMovies] = useState();
   useEffect(() => {
     fetch("https://flaskwidelo.herokuapp.com/popular").then((response) =>
