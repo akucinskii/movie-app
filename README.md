@@ -2,7 +2,7 @@
 
 ## It might take a while for Heroku server to start up.
 
-- The app shows movies from OMDb API and my Flask Api. Made to practice React and learn React-Router, uses base css as styling.
+- The app shows movies from OMDb API and my Flask Api. Made to practice React and learn React-Router.
 
 Features:
 - Own page for each searched/clicked movie.
