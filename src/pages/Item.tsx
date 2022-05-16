@@ -27,15 +27,16 @@ const Item = () => {
   useEffect(() => {
     const fetchItems = async (req: string) => {
       setLoading(true);
-      const data = await fetch(
+      const data: any = await fetch(
         `https://www.omdbapi.com/?apikey=3458304a&t=${req}`
       );
-      const items = await data.json();
+      const items: any = await data.json();
       if (items.Response === "False") {
         alert("No movie found");
         navigate("/");
       } else {
         setData(items);
+        console.log(items);
       }
       setLoading(false);
     };
@@ -74,9 +75,9 @@ const Item = () => {
               <div className="py-1">
                 <p className="text-gray-300">Ratings:</p>
                 {data.Ratings &&
-                  data.Ratings.map((rating, idx) => {
+                  data.Ratings.map((rating) => {
                     return (
-                      <div key={idx}>
+                      <div>
                         {rating.Source} - {rating.Value}
                       </div>
                     );
