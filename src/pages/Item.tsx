@@ -75,9 +75,9 @@ const Item = () => {
               <div className="py-1">
                 <p className="text-gray-300">Ratings:</p>
                 {data.Ratings &&
-                  data.Ratings.map((rating) => {
+                  data.Ratings.map((rating, index) => {
                     return (
-                      <div>
+                      <div key={index}>
                         {rating.Source} - {rating.Value}
                       </div>
                     );
