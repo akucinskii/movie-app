@@ -7,9 +7,7 @@ import Item from "./pages/Item";
 import Newest from "./pages/Newest";
 import Popular from "./pages/Popular";
 
-export interface IAppProps {}
-
-const App: React.FunctionComponent<IAppProps> = (props) => {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -20,7 +18,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
           <Route path="/popular" element={<Popular />} />
           <Route path="item" element={<Item />}>
             <Route index element={<Item />}></Route>
-            <Route path=":number" element={<Item />}></Route>
+            <Route path=":id" element={<Item />}></Route>
           </Route>
         </Route>
       </Routes>
