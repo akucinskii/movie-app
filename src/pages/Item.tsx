@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-export interface IItemProps {}
-
 interface Items {
   Title?: string;
   Actors?: string;
@@ -14,35 +12,38 @@ interface Items {
   Genre?: string;
   Director?: string;
   Runtime?: string;
+  Ratings?: {
+    Source: string;
+    Value: string;
+  }[];
 }
 
-const Item: React.FunctionComponent<IItemProps> = (props) => {
+const Item = () => {
   const navigate = useNavigate();
   const [data, setData] = useState<Items>({});
   const [loading, setLoading] = useState(false);
-  const { number } = useParams();
-
-  const fetchItems = async (req: string) => {
-    setLoading(true);
-    const data: any = await fetch(
-      `https://www.omdbapi.com/?apikey=3458304a&t=${req}`
-    );
-    const items: any = await data.json();
-    if (items.Response === "False") {
-      alert("No movie found");
-      navigate("/");
-    } else {
-      setData(items);
-    }
-    setLoading(false);
-  };
+  const { id } = useParams();
 
   useEffect(() => {
-    if (number) {
-      fetchItems(number);
+    const fetchItems = async (req: string) => {
+      setLoading(true);
+      const data: any = await fetch(
+        `https://www.omdbapi.com/?apikey=3458304a&t=${req}`
+      );
+      const items: any = await data.json();
+      if (items.Response === "False") {
+        alert("No movie found");
+        navigate("/");
+      } else {
+        setData(items);
+        console.log(items);
+      }
+      setLoading(false);
+    };
+    if (id) {
+      fetchItems(id);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [number]);
+  }, [id, navigate]);
   return (
     <div className="flex w-full h-full justify-center">
       {data.Title == null ? (
@@ -64,12 +65,24 @@ const Item: React.FunctionComponent<IItemProps> = (props) => {
               alt=""
             />
           </div>
+
           <div className="md:ml-2 flex flex-col md:w-1/2 h-full justify-between gap-2">
             <div className="w-full h-fit text-gray-400">
               <span className="text-2xl font-bold text-white">
                 {data.Title}
               </span>
               <p>Director: {data.Director}</p>
+              <div className="py-1">
+                <p className="text-gray-300">Ratings:</p>
+                {data.Ratings &&
+                  data.Ratings.map((rating) => {
+                    return (
+                      <div>
+                        {rating.Source} - {rating.Value}
+                      </div>
+                    );
+                  })}
+              </div>
               <p className="text-md">
                 {data.Genre} {data.Runtime}
               </p>
