@@ -1,6 +1,6 @@
 # React app showing movies.
 
-## It might take a while for Heroku server to start up.
+## Since heroku shut down their free tiers, flask api hosted there is now not working. Search is still working fine but no movies are displayed on categories/home page.
 
 - The app shows movies from OMDb API and my Flask Api. Made to practice React and learn React-Router.
 
